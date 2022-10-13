@@ -1,0 +1,95 @@
+-Type pwd
+	/home/student
+	
+-Type ls
+	data
+	
+-Type ls -F
+	data/
+	It added the forward slash '/'
+	
+-Type cd data and then ls
+	lab0  lab1
+	
+-Type mkdir lab1
+	Already pre-done
+	
+-Type cd lab1 followed by pwd
+	/home/student/data/lab1
+	
+-Type touch hello followed by ls
+	Lab Notes.txt  hello
+	
+-Type mkdir stuff followed by ls
+	Lab Notes.txt  hello  stuff
+
+-Type mv hello stuff followd by ls
+	Lab Notes.txt  stuff
+	
+-Type ls stuff
+	hello
+	
+-Type cd stuff followed by ls
+	hello
+	
+-Type pwd
+	/home/student/data/lab1/stuff
+	
+-Navigated to CSC211
+	They both show the same data however windows lists more information on the file
+	
+-Back in the terminal
+	I have gone back one folder at /home/student/data/lab1
+	
+-Understanding the / character
+	To the best of my ability I want to say it denotes a folder/directory
+	
+-Type touch lab1.cpp
+	It created a file called lab1.cpp in the directory
+	
+-Type less lab1.cpp
+	it opened up the file to display texts
+	
+-Type clang++ lab1.cpp
+	No error.
+	
+-Type ls
+	a.out hello lab1.cpp
+
+-file lab1.cpp
+	lab1.cpp: C source, ASCII text, with CRLF line terminators
+	
+-file a.out
+	a.out: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=0994c2fd71ec52f5666265628893239b709d42eb, not stripped
+	
+-What is file
+	It seems to be giving the file type details
+	
+-Type ./a.out
+	hi
+	
+-Type rm a.out followed by ls
+	hello lab1.cpp
+	The a.out file was removed 
+	
+-Type cp lab1.cpp lab1copy.cpp
+	hello lab1.cpp lab1copy.cpp
+	The cp must stand for copy
+	
+-Type mv lab1copy.cpp backup.cpp
+	backup.cpp hello lab1.cpp
+	mv must stand for move and we renamed it
+	
+-Type rm backup.cpp
+	hello lab1.cpp
+	backup.cpp was removed
+	
+-Type ls /usr/include/c++/5
+	A huge list of the directories
+	
+-Type ls /usr/include/c++/5/cstd*
+	It is all of the directories with cstd as part of it
+	
+-Type ls /usr/include/c++/5/st*
+	The * must mean all directories starting with the letters 'cstd' and 'st'
+	

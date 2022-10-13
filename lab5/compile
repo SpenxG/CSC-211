@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Clean up the current repo:
+rm -f ./main.o
+
+# Variables:
+compiler=g++
+ouput=main.o
+
+# Functions:
+usage () {
+    echo "compile"
+    echo "  [-c <compiler>] Specify a different compiler than g++."
+}
+
+while getopts ":hc:" opt; do
+    case ${opt} in
+        h ) 
+            usage 
+            exit 0
+        ;;
+        c ) 
+            compiler=$OPTARG 
+        ;;
+        \? ) 
+            echo "Invalid usage:"
+            usage 
+            exit 1
+        ;;
+    esac
+done
+shift $((OPTIND -1))
+
+# Compile:
+echo Compiling.
+$compiler -std=c++11 -Wall -Wextra -Werror main.cpp recursion.cpp -o $ouput
+
+# Run the tests:
+echo Running tests.
+./$ouput
