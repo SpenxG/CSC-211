@@ -1,0 +1,20 @@
+#!/bin/bash
+
+######################################################
+#   Compiles cat.cpp into the executable cat         #
+######################################################
+
+set -e    # halt on first error
+
+# use 'clang++' as the compiler
+CPP=clang++
+
+# be aggressive about warnings and errors
+FLAGS="-g -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
+
+# clear out old object files
+rm -f *.o
+
+# compile
+
+$CPP $FLAGS -o cat cat.cpp

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Variables:
+compiler=clang++
+fiboutput=fib
+factoutput=fact
+
+# Clean up
+rm -f ./$fiboutput ./$factoutput
+
+# Compile:
+$compiler -std=c++11 -g -Wall -Wextra -Werror -Wfatal-errors -pedantic fib.cpp fibmain.cpp bigint/bigint.cpp -o $fiboutput
+
+$compiler -std=c++11 -g -Wall -Wextra -Werror -Wfatal-errors -pedantic factmain.cpp bigint/bigint.cpp -o $factoutput
